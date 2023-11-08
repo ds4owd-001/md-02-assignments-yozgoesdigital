@@ -45,11 +45,13 @@ library(rnaturalearth)
 
 7.  Render the document and fix any errors.
 
+8.  
+
 ```{r}
 #| eval: false
  
-gapminder_2007 <- ___ |> 
-  ___(year == 2007) 
+gapminder_2007 <- gapminder |> 
+  filter(year == 2007) 
 ```
 
 ## Task 3: Summarize data for life expectancy by continent
@@ -75,11 +77,11 @@ gapminder_2007 <- ___ |>
 ```{r}
 #| eval: false
 
-gapminder_summary_2007 <- ___ |> 
-  group_by(___) |> 
+gapminder_summary_2007 <- gapminder_2007 |> 
+  group_by(continent) |> 
   summarise(
     count = n(),
-    lifeExp = median(___)
+    lifeExp = median(lifeExp)
   )
 ```
 
