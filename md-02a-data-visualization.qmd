@@ -108,9 +108,9 @@ gapminder_summary_2007 <- gapminder_2007 |>
 ```{r}
 #| eval: false
 
-gapminder_summary_continent_year <- gapminder ___ 
-  group_by(continent, ___) |> 
-  ___(lifeExp = median(lifeExp)) 
+gapminder_summary_continent_year <- gapminder |> 
+  group_by(continent, year) |> 
+  summarise(lifeExp = median(lifeExp)) 
 
 ```
 
@@ -131,6 +131,14 @@ gapminder_summary_continent_year <- read_rds(here::here("data/gapminder-summary-
 
 ```
 
+```{r}
+ggplot(data =  gapminder_2007,
+       aes(x = continent,
+           y = lifeExp,
+           fill =  continent))+
+  geom_boxplot(outlier.shape = NA)
+```
+
 ## Task 6: Create a boxplot
 
 1.  Add a new code chunk below point 5.
@@ -146,6 +154,9 @@ gapminder_summary_continent_year <- read_rds(here::here("data/gapminder-summary-
 4.  Run the code contained in the code chunk and fix any errors.
 
 5.  What are the data types of the three variables used for aesthetic mappings?
+
+continent --\> categorical\
+lifeExp --\> integer
 
 ## Task 7: Create a timeseries plot
 
