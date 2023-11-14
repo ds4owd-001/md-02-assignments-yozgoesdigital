@@ -1,6 +1,6 @@
 ---
 title: "Data Visualisation"
-author: ""
+author: "Jos"
 format:
   html:
     embed-resources: true
@@ -272,9 +272,8 @@ ggplot(data = gapminder_2007,
 
 5.  Use the variable continent to facet the plot by adding: `facet_wrap(~continent)`.
 
-```{=html}
 <!-- -->
-```
+
 4.  Run the code contained in the code chunk and fix any errors.
 
 ```{r}
@@ -303,7 +302,7 @@ ggplot(data = gapminder_2007,
 6.  Render the document and fix any errors.
 
 ```{r}
-#| eval: false
+#| eval: true
 
 ggplot(data = gapminder,
        mapping = aes(x = year, 
@@ -312,7 +311,7 @@ ggplot(data = gapminder,
                      color = country)) +
   geom_line(lwd = 1, show.legend = FALSE) + 
   facet_wrap(~continent) +
-  # scale_color_manual(values = country_colors) +
+  scale_color_manual(values = country_colors) +
   theme_minimal() 
 
 ```
